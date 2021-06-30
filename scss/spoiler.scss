@@ -1,0 +1,85 @@
+.spoiler {
+    .spoiler__icon {
+        display: none;
+    }
+
+    &._init {
+        .spoiler__icon {
+            display: block;
+            align-self: flex-start;
+
+            padding: 0 1.35rem;
+
+            transition: transform .2s ease;
+        }
+
+        .spoiler__title {
+            display: flex;
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            &._active .spoiler__icon {
+                transform: rotate(-180deg);
+            }
+        }
+
+        .spoiler__plus,
+        .spoiler__arrow,
+        .spoiler__vertical {
+            position: relative;
+        }
+
+        .spoiler__plus::before,
+        .spoiler__plus::after,
+        .spoiler__arrow::after,
+        .spoiler__vertical::after{
+            content: '';
+            position: absolute;
+            right: 1.35rem;
+            top: 50%;
+            transition: transform .3s ease;
+        }
+
+        .spoiler__plus::before,
+        .spoiler__plus::after{
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+        }
+    
+        .spoiler__plus::after{
+            transform: rotate(-90deg);
+        }
+    
+        .spoiler__plus._active::after{
+            transform: rotate(0deg);
+        }
+
+        .spoiler__arrow::after,
+        .spoiler__vertical::after{
+            height: 6px;
+            width: 6px;
+            margin-top: -3px;
+            border-bottom: solid 2px #fff;
+            border-right: solid 2px #fff;
+            transform: rotate(-45deg);
+        }
+
+        .spoiler__arrow._active::after{
+            transform: rotate(45deg);
+        }
+
+        .spoiler__vertical::after {
+            transform: rotate(45deg);
+        }
+
+        .spoiler__vertical._active::after{
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+.spoiler__title {
+    padding: 10px 0;
+}

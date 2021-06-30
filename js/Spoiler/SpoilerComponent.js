@@ -2,7 +2,7 @@ export class SpoilerComponent {
     constructor(options) {
         this.spoilerAttr = options.spoilerAttr || 'data-spoilers';
         this.duration = options.duration || 500;
-        this.icon = options.icon || 'spoiler__icon';
+        this.icon = options.icon || 'spoiler__vertical';
     }
 
     open(el) {
